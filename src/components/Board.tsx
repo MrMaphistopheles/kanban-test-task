@@ -15,6 +15,8 @@ import { SortableIssueCard } from './SortableIssueCard'
 import Search from './Search'
 import { useStore } from '../store'
 import Link from './Link'
+import { getRepo } from '../utils/getRepoName'
+import OpenIssues from './OpenIssues'
 
 const conlums = [
     {
@@ -44,7 +46,6 @@ function Board() {
     const [activeIssue, setActiveIssue] = useState<Issue | null>(null)
 
     const { search, issues, setData } = useStore()
-    //const [issus, setIssus] = useState<Issue[]>(sortData(dummy))
 
     // Handle the start of a drag event
     function handleDragStart(event: DragStartEvent) {
@@ -72,7 +73,7 @@ function Board() {
 
                 return arrayMove(issues, activeIndex, overIndex)
             }
-            setData(IssueUpdate(issues), search) // Update the issues
+            setData(IssueUpdate(issues), getRepo(search)) // Update the issues
         }
 
         if (isOverColumn && isActiveIssue) {
@@ -88,14 +89,16 @@ function Board() {
                 return data
             }
 
-            setData(issuesUpdate(issues), search) // Update the issues
+            setData(issuesUpdate(issues), getRepo(search)) // Update the issues
         }
     }
 
     return (
-        <>
+        <div className="w-screen h-screen bg-slate-50 flex items-center flex-col justify-center gap-2">
+            <OpenIssues />
             <Search />
             <Link />
+
             <div className="flex items-center justify-center gap-2">
                 <DndContext
                     sensors={sensors}
@@ -116,9 +119,9 @@ function Board() {
                             <SortableIssueCard issue={activeIssue} />
                         ) : null}
                     </DragOverlay>
-                </DndContext>{' '}
+                </DndContext>
             </div>
-        </>
+        </div>
     )
 }
 

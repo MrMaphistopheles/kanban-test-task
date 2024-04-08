@@ -3,3 +3,7 @@ export const getRepoName = (url: string) => {
         return url.split('.com/')[1].split('/issues')[0]
     }
 }
+
+export const getRepo = (url: string) => {
+    return url.split('/')[1]
+}

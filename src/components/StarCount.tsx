@@ -2,13 +2,18 @@ import { useQuery } from '@tanstack/react-query'
 import { useStore } from '../store'
 import { getStarsCount } from '../api/git'
 import { Skeleton } from 'antd'
+import { useEffect } from 'react'
 
 export default function StarCount() {
     const { search } = useStore()
-    const { data, isLoading } = useQuery({
+    const { data, isLoading, refetch } = useQuery({
         queryKey: ['stars'],
         queryFn: () => getStarsCount(search),
     })
+
+    useEffect(() => {
+        refetch()
+    }, [refetch, search])
 
     return (
         <div className="flex items-center justify-center gap-2">

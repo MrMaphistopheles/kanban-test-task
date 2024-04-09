@@ -7,7 +7,7 @@ export default function OpenIssues() {
     const { searchHistory, setSearch } = useStore()
 
     return (
-        <div className="w-[70em] py-4 flex gap-3 items-center justify-start">
+        <div className="w-[80%] py-4 flex gap-3 items-center justify-start">
             {searchHistory.map((search, index) => (
                 <React.Fragment key={index}>
                     <Button

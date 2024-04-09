@@ -9,11 +9,11 @@ export default function Link() {
 
     if (search === '') {
         return (
-            <div className="w-[70em] py-4 flex gap-3 items-center justify-start" />
+            <div className="w-[75%] py-4 flex gap-3 items-center justify-start" />
         )
     }
     return (
-        <div className="w-[70em] py-4 flex gap-3 items-center justify-start">
+        <div className="w-[80%] py-4 flex gap-3 items-center justify-start">
             <a href={`https://github.com/${owner}`} className=" no-underline">
                 {owner}
             </a>

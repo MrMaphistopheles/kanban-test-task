@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { Button, Input } from 'antd'
 import { getIssue } from '../api/git'
-import { IssueArray } from '../@types/issues'
+import { IssueArray } from '../types/issues'
 import { useStore } from '../store'
 import { ChangeEvent, useEffect } from 'react'
 import { getRepo, getRepoName } from '../utils/getRepoName'
@@ -60,7 +60,7 @@ export default function Search() {
     }, [search, setData])
 
     return (
-        <div className="flex items-center justify-center gap-2 pt-5 w-[73em]">
+        <div className="flex items-center justify-center gap-2 pt-5 w-[80%]">
             <Input
                 size="large"
                 variant="outlined"

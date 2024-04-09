@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { IssueArray } from '../@types/issues'
+import { IssueArray } from '../types/issues'
 
 const instance = axios.create({
     headers: {
@@ -14,8 +14,8 @@ export const getIssue = async (url: string): Promise<IssueArray | unknown> => {
         )
         return res.data
     } catch (error) {
-        console.log(error)
-        return error
+        console.error(error)
+        throw error
     }
 }
 
@@ -24,7 +24,7 @@ export const getStarsCount = async (url: string) => {
         const res = await instance.get(`https://api.github.com/repos/${url}`)
         return res.data?.stargazers_count
     } catch (error) {
-        console.log(error)
-        return error
+        console.error(error)
+        throw error
     }
 }

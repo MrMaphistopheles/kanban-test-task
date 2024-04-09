@@ -8,7 +8,7 @@ import {
     useSensors,
 } from '@dnd-kit/core'
 import { arrayMove } from '@dnd-kit/sortable'
-import { Issue } from '../@types/issues'
+import { Issue } from '../types/issues'
 import { useState } from 'react'
 import { Column } from './Column'
 import { SortableIssueCard } from './SortableIssueCard'
@@ -43,9 +43,9 @@ function Board() {
         })
     )
 
-    const [activeIssue, setActiveIssue] = useState<Issue | null>(null)
+    const [activeIssue, setActiveIssue] = useState<Issue | null>(null) // Set the active issue
 
-    const { search, issues, setData } = useStore()
+    const { search, issues, setData } = useStore() // Get the search, issues, and setData from the store
 
     // Handle the start of a drag event
     function handleDragStart(event: DragStartEvent) {
@@ -94,12 +94,12 @@ function Board() {
     }
 
     return (
-        <div className="w-screen h-screen bg-slate-50 flex items-center flex-col justify-center gap-2">
+        <div className=" bg-slate-50 flex items-center flex-col justify-start h-screen  w-screen gap-2">
             <OpenIssues />
             <Search />
             <Link />
 
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex flex-col items-center justify-center gap-2 w-screen lg:flex-row">
                 <DndContext
                     sensors={sensors}
                     onDragStart={handleDragStart}

@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Issue } from './@types/issues'
+import { Issue } from './types/issues'
 
 type Store = {
     issues: Issue[]

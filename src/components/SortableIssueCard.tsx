@@ -2,7 +2,7 @@ import { Card } from 'antd'
 import { getHowManyDaysAgo } from '../utils/howManyDaysAgo'
 import { useSortable } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import { Issue } from '../@types/issues'
+import { Issue } from '../types/issues'
 
 export function SortableIssueCard({ issue }: { issue: Issue }) {
     const {
@@ -29,7 +29,7 @@ export function SortableIssueCard({ issue }: { issue: Issue }) {
         return (
             <Card
                 title={issue.title}
-                className="w-full cursor-move opacity-50"
+                className="w-11/12 cursor-move opacity-50"
                 ref={setNodeRef}
                 style={style}
             >
@@ -43,7 +43,7 @@ export function SortableIssueCard({ issue }: { issue: Issue }) {
     return (
         <Card
             title={issue.title}
-            className="w-full cursor-move"
+            className="w-11/12 md:w-[18em] lg:w-[27em] cursor-move"
             ref={setNodeRef}
             {...attributes}
             {...listeners}

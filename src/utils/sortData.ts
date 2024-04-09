@@ -1,4 +1,4 @@
-import { Issue } from '../@types/issues'
+import { Issue } from '../types/issues'
 
 export const sortData = (fetchData: Issue[]) => {
     // Create a copy of the fetched data

@@ -21,6 +21,6 @@
         "noFallthroughCasesInSwitch": true
     },
     "include": ["src", "prettier.config.js"],
-    "exclude": ["node_modules", "src/**/*.test.ts"],
+    "exclude": ["node_modules", "src/**/*.test.tsx", "src/**/*.test.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { Column } from './Column'
-import { Issue } from '../types/issues' // replace with your actual Issue type import
+import { Issue } from '../types/issues'
+import { dummy } from '../../dummy'
 
 vi.mock('react-sortable-hoc', () => ({
     SortableContext: vi.fn(({ children }) => <div>{children}</div>),
@@ -17,10 +18,7 @@ vi.mock('./SortableIssueCard', () => ({
 }))
 
 describe('Column', () => {
-    const mockIssues: Issue[] = [
-        { id: '1', title: 'Issue 1' },
-        { id: '2', title: 'Issue 2' },
-    ]
+    const mockIssues: Issue[] = [...dummy]
 
     it('renders without crashing', () => {
         render(

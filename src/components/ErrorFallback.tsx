@@ -8,7 +8,7 @@ export function Fallback({
     resetErrorBoundary: () => void
 }) {
     return (
-        <div className="flex items-center justify-center h-screen w-full flex-col">
+        <div className="flex items-center justify-center h-screen w-8/12 flex-col">
             <div
                 className="flex gap-2 items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800"
                 role="alert"

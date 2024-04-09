@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { Issue } from './types/issues'
 
-type Store = {
+export type Store = {
     issues: Issue[]
     setData: (data: Issue[], name: string) => void
     search: string
